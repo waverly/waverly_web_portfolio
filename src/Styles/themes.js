@@ -1,6 +1,7 @@
+import { css } from "styled-components";
+
 export const theme = {
-  colors: { yellow: "#E9FF00", darkblue: "#1A1934" },
-  // layout
+  colors: { yellow: "#E9FF00", darkblue: "#1A1934" }, // layout
   z: {
     titleBar: 50,
     settingsMenu: 80,
@@ -17,8 +18,7 @@ export const theme = {
     double: "24px",
     triple: "36px",
     quadruple: "48px"
-  },
-  // end layout
+  }, // end layout
 
   // type
   fontSize: {
@@ -29,7 +29,17 @@ export const theme = {
     h4: "14px",
     h5: "14px"
   },
-  fontWeight: { light: "200", regular: "400", medium: "600", heavy: "800" }
+  fontWeight: { light: "200", regular: "400", medium: "600", heavy: "800" },
+  yellowBefore: css`
+    content: "";
+    width: 100%;
+    height: 40%;
+    position: absolute;
+    background-color: ${props => props.theme.colors.yellow};
+    top: 30%;
+    left: 0;
+    z-index: -1;
+  `
 };
 
 // end type

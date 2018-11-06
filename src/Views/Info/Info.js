@@ -13,27 +13,59 @@ const PageWrap = styled.div`
   justify-content: center;
   align-items: center;
 
+  @media screen and (max-width: 1000px) {
+    padding: 50px 0;
+  }
+
   a {
     font-size: 14px;
+
+    @media screen and (max-width: 1000px) {
+      font-size: 16px;
+    }
   }
 `;
 
 const TextWrap = styled.div`
-  width: 70%;
+  width: 60%;
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 600px;
+  min-width: 500px;
+
+  @media screen and (max-width: 1000px) {
+    width: 90%;
+    min-width: auto;
+  }
 `;
 const Bio = styled.h2`
   margin-bottom: 40px;
 `;
 
-const TechWrap = styled.div`
+const FlexWrap = styled.div`
   display: flex;
   justify-content: flex-start;
   margin-bottom: 40px;
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+  }
 
   div {
     margin-right: 80px;
+    @media screen and (max-width: 1000px) {
+      margin-right: 0;
+      width: 100%;
+    }
+  }
+  a {
+    margin-right: 20px;
+  }
+`;
+
+const Github = styled.h2`
+  position: relative;
+  display: inline-block;
+  &:before {
+    ${props => props.theme.yellowBefore};
   }
 `;
 
@@ -44,14 +76,14 @@ const Info = props => {
         <Bio>
           WAVERLY MANDEL IS A full-stack web developer with a strong design
           sensibility. After studying web programming and VISUAL art at New York
-          University, SHE went on to split my time between building websites and
-          applications, teaching Front-End Web Development for General Assembly,
-          and doing occasional boutique design work.
+          University, SHE went on to split her time between building websites
+          and applications, teaching Front-End Web Development for General
+          Assembly, and doing occasional boutique design work.
         </Bio>
 
         <h2>Technologies</h2>
         <br />
-        <TechWrap>
+        <FlexWrap>
           <div>
             <h3>*React.JS</h3>
             <h3>*Angular 2+</h3>
@@ -64,8 +96,15 @@ const Info = props => {
             <h3>*css /scss / jss</h3>
             <h3>*Basic ThreeJS / WebGL</h3>
           </div>
-        </TechWrap>
-        <a href="https://github.com/waverly">View Github</a>
+        </FlexWrap>
+        <FlexWrap>
+          <a href="mailto:waverly.rose.mandel@gmail.com">
+            <Github>Contact</Github>
+          </a>
+          <a href="https://github.com/waverly">
+            <Github>View Github</Github>
+          </a>
+        </FlexWrap>
       </TextWrap>
     </PageWrap>
   );

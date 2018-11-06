@@ -11,6 +11,10 @@ const NavWrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
+  @media screen and (max-width: 1000px) {
+    background-color: white;
+    border-bottom: 1px solid ${props => props.theme.colors.darkblue};
+  }
 `;
 
 const Left = styled.div`
@@ -26,23 +30,25 @@ const Right = styled.div`
   justify-content: flex-end;
   width: 49%;
   text-align: right;
-  a {
-    margin-left: 15px;
-    font-size: 12px;
-    line-height: 22px;
-    text-transform: uppercase;
-    position: relative;
-    &::before {
-      content: "";
-      width: 100%;
-      height: 40%;
-      position: absolute;
-      background-color: ${props => props.theme.colors.yellow};
-      top: 30%;
-      left: 0;
-      z-index: -1;
-      opacity: ${props => (props.active ? "1" : "0")};
-    }
+`;
+
+const NavItem = styled.h2`
+  margin-left: 15px;
+  font-size: 12px;
+  line-height: 22px;
+  text-transform: uppercase;
+  position: relative;
+  &:before {
+    content: "";
+    width: 100%;
+    height: 40%;
+    position: absolute;
+    background-color: ${props => props.theme.colors.yellow};
+    top: 30%;
+    left: 0;
+    z-index: -1;
+    opacity: ${props => (props.active ? "1" : "0")};
+    transition: 0.5s opacity;
   }
 `;
 
@@ -58,11 +64,13 @@ const Nav = props => {
         <h2>Waverly Mandel</h2>
       </Left>
       <Right>
-        <Link active={props.location.pathname === "/info"} to="/info">
-          Info
+        <Link to="/">
+          <NavItem active={props.location.pathname === "/"}>Info</NavItem>
         </Link>
-        <Link active={props.location.pathname === "/"} to="/">
-          Recent Work
+        <Link to="/work">
+          <NavItem active={props.location.pathname === "/work"}>
+            Recent Work
+          </NavItem>
         </Link>
       </Right>
     </NavWrapper>

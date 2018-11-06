@@ -48,16 +48,28 @@ export const globalStyles = css`
 		text-transform: uppercase;
 		letter-spacing: 1px;
 		color: #1A1934;
+
+
 	}
 
 	h1{
-		font-size: 20px;
-		line-height: 30px;
+		font-size: 16px;
+		line-height: 26px;
+		@media screen and (max-width: 1000px) {
+			font-size: 20px;
+			line-height: 28px;
+		}
+		
 	}
 
 	h2, h3, h4, p {
-		font-size: 14px;
-		line-height: 22px;
+		font-size: 12px;
+		line-height: 18px;
+
+		@media screen and (max-width: 1000px) {
+			font-size: 16px;
+			line-height: 22px;
+		}
 	}
 
 	a {
@@ -72,7 +84,7 @@ export const globalStyles = css`
 
 	body {
 		padding: 0;
-		font-family: 'gotham', 'Times New Roman', Times, serif;
+		font-family: 'gotham', 'helvetica', sans-serif;
 	}
 
 	#root,

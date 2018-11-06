@@ -7,11 +7,19 @@ import { fetchWorkPage } from "../../Utils/prismic-configuration";
 const PageWrap = styled.div`
   text-align: left;
   padding: 150px 0px;
+
+  @media screen and (max-width: 1000px) {
+    padding: 50px 0;
+  }
 `;
 
 const PortfolioWrapper = styled.div`
   width: 70%;
   margin: 0 auto;
+
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+  }
 `;
 
 class Work extends Component {

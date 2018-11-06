@@ -31,8 +31,8 @@ class App extends Component {
         <div>
           <Nav />
           <Switch>
-            <Route path="/" exact component={Work} />
-            <Route path="/info" exact component={Info} />
+            <Route path="/work" exact component={Work} />
+            <Route path="/" exact component={Info} />
           </Switch>
         </div>
       </ThemeProvider>
