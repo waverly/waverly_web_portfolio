@@ -1,3 +1,6 @@
+import Prismic from "prismic-javascript";
+import { RichText } from "prismic-reactjs";
+
 export const linkResolver = function(doc) {
   // Pretty URLs for known types
   if (doc.type === "blog") return "/post/" + doc.uid;
@@ -6,37 +9,40 @@ export const linkResolver = function(doc) {
   return "/doc/" + doc.id;
 };
 
-export const fetchArticle = (article_link, type) => {
-  let { title, subtitle, hero_image, module_type } = article_link.data;
+export const apiEndpoint = "https://waverly-web-portfolio.prismic.io/api/v2";
 
-  // add in logic to make sure it doesnt error out if any of these fields were left blank
-  title = title[0].text;
-  subtitle = subtitle[0].text;
-  hero_image = hero_image.url;
+export const fetchWorkPage = async () => {
+  const api = await Prismic.api(apiEndpoint);
+  const response = await api.query(
+    Prismic.Predicates.at("document.type", "work_page")
+  );
 
-  return {
-    title,
-    subtitle,
-    hero_image,
-    module_type,
-    type
-  };
+  const data = response.results[0].data;
+
+  const portfolioItems = data.portfolio_items;
+
+  const portfolioItemData = await Promise.all(
+    portfolioItems.map(async item => {
+      const uid = item.portfolio_item.uid;
+      const itemResponse = await api.getByUID("portfolio_item", uid);
+      const itemData = itemResponse.data;
+
+      const title = itemData.title[0].text;
+      // todo - refactor to include richtext
+      const description = itemData.description[0].text;
+      const thumbnail = itemData.thumbnail.url;
+      const hyperlink = itemData.hyperlink.url;
+
+      const technologies = itemData.technologies.map(
+        tech => tech.technology[0].text
+      );
+
+      return { title, description, thumbnail, hyperlink, technologies, uid };
+    })
+  );
+
+  const returnData = { portfolioItems: portfolioItemData };
+  return returnData;
 };
 
-export const fetchResource = (resource_link, type) => {
-  let { title, subtitle, thumbnail, module_type } = resource_link.data;
-
-  // add in logic to make sure it doesnt error out if any of these fields were left blank
-  console.log(resource_link);
-  title = title[0].text;
-  subtitle = subtitle[0].text;
-  thumbnail = thumbnail.url;
-
-  return {
-    title,
-    subtitle,
-    thumbnail,
-    module_type,
-    type
-  };
-};
+export const fetchPortfolioItem = async () => {};

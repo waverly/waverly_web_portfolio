@@ -38,8 +38,20 @@ export const globalStyles = css`
 	}
 
 	h1, h2, h3, h4, h5, h6, p, li, ol {
-		font-weight: ${props => props.theme.fontWeight.heavy};
+		font-weight: 300;
 		margin: 0;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		color:  ${props => props.theme.colors.darkblue};
+	}
+
+	h1{
+		font-size: 20px;
+	}
+
+	h2, h3, h4, p {
+		font-size: 14px;
+		line-height: 22px;
 	}
 
 	a {
