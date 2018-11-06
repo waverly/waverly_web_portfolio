@@ -14,7 +14,7 @@ const PageWrap = styled.div`
   align-items: center;
 
   @media screen and (max-width: 1000px) {
-    padding: 50px 0;
+    padding: 80px 0;
   }
 
   a {
@@ -33,7 +33,7 @@ const TextWrap = styled.div`
   min-width: 500px;
 
   @media screen and (max-width: 1000px) {
-    width: 90%;
+    width: 95%;
     min-width: auto;
   }
 `;
@@ -74,11 +74,12 @@ const Info = props => {
     <PageWrap>
       <TextWrap>
         <Bio>
-          WAVERLY MANDEL IS A full-stack web developer with a strong design
-          sensibility. After studying web programming and VISUAL art at New York
-          University, SHE went on to split her time between building websites
-          and applications, teaching Front-End Web Development for General
-          Assembly, and doing occasional boutique design work.
+          WAVERLY MANDEL IS A creative full-stack web developer with strong
+          design sensibility and attention to detail. After studying web
+          programming and VISUAL art at New York University, SHE went on to
+          split her time between building websites and applications, teaching
+          Front-End Web Development for General Assembly, and doing occasional
+          boutique design work. Please reach out with any inquiries.
         </Bio>
 
         <h2>Technologies</h2>

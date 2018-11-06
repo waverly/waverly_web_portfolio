@@ -67,8 +67,8 @@ export const globalStyles = css`
 		line-height: 18px;
 
 		@media screen and (max-width: 1000px) {
-			font-size: 16px;
-			line-height: 22px;
+			font-size: 14px;
+			line-height: 20px;
 		}
 	}
 
