@@ -7,9 +7,14 @@ import normalized from "./normalized";
 export const globalStyles = css`
 	${normalized}
 
+		@font-face {
+		font-family:'gotham';
+		src: url('/fonts/gothamLightRegular.otf'); 
+	}
+
 	html {
 		font-size: 10px;
-		font-family: ${props => props.theme.fontFamily.cormorant};
+		font-family: 'gotham', 'Times New Roman', Times, serif;
 		font-weight: 300;
 	}
 
@@ -19,7 +24,7 @@ export const globalStyles = css`
 
 	button, input, select, option, textarea {
 		background: white;
-		font-family: ${props => props.theme.fontFamily.cormorant};
+		font-family: 'gotham', 'Times New Roman', Times, serif;
 		font-weight: 300;
 		border: none;
 		outline: none;
@@ -42,11 +47,12 @@ export const globalStyles = css`
 		margin: 0;
 		text-transform: uppercase;
 		letter-spacing: 1px;
-		color:  ${props => props.theme.colors.darkblue};
+		color: #1A1934;
 	}
 
 	h1{
 		font-size: 20px;
+		line-height: 30px;
 	}
 
 	h2, h3, h4, p {
@@ -57,6 +63,7 @@ export const globalStyles = css`
 	a {
 		text-decoration: none;
 		color: inherit;
+		text-transform: uppercase;
 	}
 
 	* {
@@ -65,6 +72,7 @@ export const globalStyles = css`
 
 	body {
 		padding: 0;
+		font-family: 'gotham', 'Times New Roman', Times, serif;
 	}
 
 	#root,

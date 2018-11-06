@@ -29,7 +29,6 @@ export const theme = {
     h4: "14px",
     h5: "14px"
   },
-  fontFamily: { cormorant: "'Cormorant', serif" },
   fontWeight: { light: "200", regular: "400", medium: "600", heavy: "800" }
 };
 

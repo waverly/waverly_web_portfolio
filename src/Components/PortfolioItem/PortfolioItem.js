@@ -5,23 +5,29 @@ import { generateKey } from "Utils/helpers";
 
 const ItemWrapper = styled.div`
   width: 100%;
-  padding: 30px 5px;
+  padding: 30px 10px;
   border-bottom: 2px solid black;
   display: flex;
   justify-content: space-between;
+`;
+
+const OuterWrap = styled.div`
+  &:hover {
+    background-color: ${props => props.theme.colors.yellow};
+  }
 
   img {
     opacity: 0;
     position: fixed;
     bottom: 20px;
     right: 20px;
-    display: none;
+    width: 350px;
   }
-`;
 
-const OuterWrap = styled.div`
   &:hover {
-    background-color: ${props => props.theme.colors.yellow};
+    img {
+      opacity: 1;
+    }
   }
 `;
 
@@ -56,7 +62,7 @@ const PortfolioItem = props => {
 
   return (
     <OuterWrap>
-      <Link to={hyperlink}>
+      <a href={hyperlink} target="_blank">
         <ItemWrapper>
           <Left>
             <Title>{title}</Title>
@@ -68,8 +74,8 @@ const PortfolioItem = props => {
             ))}
           </Right>
         </ItemWrapper>
-      </Link>
-      {/* <img src={thumbnail} alt="" /> */}
+      </a>
+      <img src={thumbnail} alt="" />
     </OuterWrap>
   );
 };

@@ -15,6 +15,9 @@ const NavWrapper = styled.div`
 
 const Left = styled.div`
   width: 49%;
+  h2 {
+    font-size: 12px;
+  }
 `;
 
 const Right = styled.div`
@@ -25,7 +28,7 @@ const Right = styled.div`
   text-align: right;
   a {
     margin-left: 15px;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 22px;
     text-transform: uppercase;
     position: relative;
