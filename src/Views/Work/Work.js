@@ -16,6 +16,7 @@ const PageWrap = styled.div`
 const PortfolioWrapper = styled.div`
   width: 70%;
   margin: 0 auto;
+  max-width: 1000px;
 
   @media screen and (max-width: 1000px) {
     width: 100%;

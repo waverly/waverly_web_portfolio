@@ -5,7 +5,6 @@ import { generateKey } from "Utils/helpers";
 
 const ItemWrapper = styled.div`
   width: 100%;
-  max-width: 1000px;
   padding: 30px 10px;
   border-bottom: 2px solid black;
   display: flex;
