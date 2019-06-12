@@ -86,7 +86,8 @@ const Info = props => {
         <br />
         <FlexWrap>
           <div>
-            <h3>*React.JS</h3>
+            <h3>*ReactJS and React Native</h3>
+            <h3>*NextJS / SSR</h3>
             <h3>*Angular 2+</h3>
             <h3>*Shopify / Liquid</h3>
             <h3>*GraphQL</h3>
@@ -94,7 +95,7 @@ const Info = props => {
           <div>
             <h3>*Javascript / JQuery</h3>
             <h3>*HTML5</h3>
-            <h3>*css /scss / jss</h3>
+            <h3>*CSS / SCSS / JSS</h3>
             <h3>*Basic ThreeJS / WebGL</h3>
           </div>
         </FlexWrap>
