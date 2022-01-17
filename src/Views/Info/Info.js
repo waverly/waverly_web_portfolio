@@ -1,9 +1,5 @@
-import React, { Component, Fragment } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import styled from "styled-components";
-import PortfolioItem from "Components/PortfolioItem";
-import { generateKey } from "Utils/helpers";
-import { fetchWorkPage } from "../../Utils/prismic-configuration";
 
 const PageWrap = styled.div`
   text-align: left;
@@ -15,14 +11,6 @@ const PageWrap = styled.div`
 
   @media screen and (max-width: 1000px) {
     padding: 80px 0;
-  }
-
-  a {
-    font-size: 14px;
-
-    @media screen and (max-width: 1000px) {
-      font-size: 16px;
-    }
   }
 `;
 
@@ -37,74 +25,59 @@ const TextWrap = styled.div`
     min-width: auto;
   }
 `;
+
+const Name = styled.h1`
+  margin-bottom: 5px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 15px;
+    margin-left: -10px;
+  }
+`;
+
 const Bio = styled.h2`
   margin-bottom: 40px;
+  margin-left: 5px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 20px;
+    margin-left: 0;
+  }
 `;
 
 const FlexWrap = styled.div`
   display: flex;
   justify-content: flex-start;
-  margin-bottom: 40px;
-  @media screen and (max-width: 1000px) {
-    flex-direction: column;
-  }
+  flex-direction: column;
+  margin-left: 5px;
 
-  div {
-    margin-right: 80px;
-    @media screen and (max-width: 1000px) {
-      margin-right: 0;
-      width: 100%;
-    }
-  }
   a {
     margin-right: 20px;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    margin-left: 0;
   }
 `;
 
-const Github = styled.h2`
-  position: relative;
-  display: inline-block;
-  &:before {
-    ${props => props.theme.yellowBefore};
-  }
-`;
 
-const Info = props => {
+const Info = () => {
   return (
     <PageWrap>
       <TextWrap>
+        <Name>Waverly Mandel</Name>
         <Bio>
-          WAVERLY MANDEL IS A creative full-stack web developer with strong
-          design sensibility and attention to detail. After studying web
-          programming and VISUAL art at New York University, SHE went on to
-          split her time between building websites and applications, teaching
-          Front-End Web Development for General Assembly, and doing occasional
-          boutique design work. Please reach out with any inquiries.
+          Software engineer
         </Bio>
-
-        <h2>Technologies</h2>
-        <br />
-        <FlexWrap>
-          <div>
-            <h3>*ReactJS and React Native</h3>
-            <h3>*NextJS / SSR</h3>
-            <h3>*Angular 2+</h3>
-            <h3>*Shopify / Liquid</h3>
-            <h3>*GraphQL</h3>
-          </div>
-          <div>
-            <h3>*Javascript / JQuery</h3>
-            <h3>*HTML5</h3>
-            <h3>*CSS / SCSS / JSS</h3>
-            <h3>*Basic ThreeJS / WebGL</h3>
-          </div>
-        </FlexWrap>
         <FlexWrap>
           <a href="mailto:waverly.rose.mandel@gmail.com">
-            <Github>Contact</Github>
+            Contact
           </a>
-          <a href="https://github.com/waverly">
-            <Github>View Github</Github>
+          <a href="https://www.linkedin.com/in/waverly-mandel-001813125/">
+            Linkedin
           </a>
         </FlexWrap>
       </TextWrap>

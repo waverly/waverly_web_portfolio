@@ -8,7 +8,7 @@ export const theme = {
     overlay: 100,
     threeDot: 110,
     modal: 120,
-    alert: 150
+    alert: 150,
   },
   spacing: {
     eighth: "2px",
@@ -17,7 +17,7 @@ export const theme = {
     single: "14px",
     double: "24px",
     triple: "36px",
-    quadruple: "48px"
+    quadruple: "48px",
   }, // end layout
 
   // type
@@ -27,19 +27,19 @@ export const theme = {
     h3: "14px",
     p: "14px",
     h4: "14px",
-    h5: "14px"
+    h5: "14px",
   },
   fontWeight: { light: "200", regular: "400", medium: "600", heavy: "800" },
-  yellowBefore: css`
+  greenBefore: css`
     content: "";
     width: 100%;
     height: 40%;
     position: absolute;
-    background-color: ${props => props.theme.colors.yellow};
+    background-color: #d4ffd6;
     top: 30%;
     left: 0;
     z-index: -1;
-  `
+  `,
 };
 
 // end type
