@@ -13,6 +13,11 @@ export const globalStyles = css`
   }
 
   @font-face {
+    font-family: "gtsectrabook";
+    src: url("/fonts/GT-Sectra-Fine-Book.ttf");
+  }
+
+  @font-face {
     font-family: "gtsectrabold";
     src: url("/fonts/gt-s-bold.otf");
   }
@@ -25,7 +30,11 @@ export const globalStyles = css`
   body {
     padding: 0;
     color: #440500;
-    font-family: "gtsectra", "Times New Roman", Times, serif; 
+    font-family: "gtsectrabook", "Times New Roman", Times, serif;
+
+    @media screen and (min-width: 768px) {
+      font-family: "gtsectra", "Times New Roman", Times, serif;
+    }
   }
 
   form {
@@ -70,8 +79,10 @@ export const globalStyles = css`
   h1 {
     font-size: 44px;
     margin-bottom: 35px;
+    font-weight: 400;
 
     @media screen and (min-width: 768px) {
+      font-weight: 700;
       letter-spacing: -0.3px;
       font-size: 84px;
       margin-bottom: 55px;
@@ -85,7 +96,7 @@ export const globalStyles = css`
   p,
   a {
     font-size: 26px;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 1.2;
     color: inherit;
 
