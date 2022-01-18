@@ -52,6 +52,7 @@ const FlexWrap = styled.div`
 
   a {
     margin-right: 20px;
+    margin-bottom: 5px;
     position: relative;
     display: inline-block;
     text-decoration: none;
