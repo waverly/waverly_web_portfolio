@@ -23,6 +23,7 @@ const TextWrap = styled.div`
   @media screen and (max-width: 1000px) {
     width: 95%;
     min-width: auto;
+    margin-bottom: 100px;
   }
 `;
 
@@ -74,11 +75,11 @@ const Info = () => {
           Software engineer
         </Bio>
         <FlexWrap>
-          <a href="mailto:waverly.rose.mandel@gmail.com">
-            Contact
-          </a>
           <a href="https://www.linkedin.com/in/waverly-mandel-001813125/">
             Linkedin
+          </a>
+          <a href="mailto:waverly.rose.mandel@gmail.com">
+            Contact
           </a>
         </FlexWrap>
       </TextWrap>
